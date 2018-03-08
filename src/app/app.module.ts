@@ -15,6 +15,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+// HTTP client to consume our API
+import { HttpModule } from '@angular/http';
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -22,6 +26,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    HttpClientModule,
 
     NgbModule.forRoot(),
     ThemeModule.forRoot(),

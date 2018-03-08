@@ -16,6 +16,8 @@ import { LocalDataSource } from 'ng2-smart-table';
 
 export class AnimalTableComponent implements OnInit {
 
+  source: LocalDataSource;
+
   settings = {
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
@@ -66,12 +68,17 @@ export class AnimalTableComponent implements OnInit {
   };
 
 
-  source = new LocalDataSource();
 
   constructor(private service: SmartTableService) {
-    const data = this.service.getData();
-    this.source.load(data);
+    this.source = new LocalDataSource();
+    // const data = this.service.getData();
+    const data = this.service.getData().then((data) => {
+      this.source.load(data)
+      console.log(data);
+    });
+    // this.source.load(data);
   }
+
 
   onDeleteConfirm(event): void {
     if (window.confirm('Are you sure you want to delete?')) {

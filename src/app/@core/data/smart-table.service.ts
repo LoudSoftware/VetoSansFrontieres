@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Http, Response, Headers } from '@angular/http';
+
 
 @Injectable()
 export class SmartTableService {
 
-  data = [
+  /* data = [
     {
       'animalno': 1,
       'name': 'Doggo',
@@ -15,10 +17,28 @@ export class SmartTableService {
       'ownerno': 1,
       'clinicname': 'INEEDHEALING',
     },
-  ]
+  ] */
+  data: any = [];
 
-  constructor() { }
-  getData() {
+  constructor(private _http: Http) { }
+
+  /* getData() {
     return this.data;
+  } */
+
+  getAnimals() {
+    return this._http.get('http://localhost:30000/api/animal')
+      .map((res: Response) => res.json())
+      .subscribe(data => {
+        this.data = data;
+        console.log(this.data);
+      });
+  }
+
+  getData(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this._http.get('http://localhost:30000/api/animal')
+        .map((res: Response) => res.json());
+    });
   }
 }
