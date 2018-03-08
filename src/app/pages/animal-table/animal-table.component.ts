@@ -16,7 +16,7 @@ import { LocalDataSource } from 'ng2-smart-table';
 
 export class AnimalTableComponent implements OnInit {
 
-    settings = {
+  settings = {
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
@@ -32,11 +32,11 @@ export class AnimalTableComponent implements OnInit {
       confirmDelete: true,
     },
     columns: {
-      animalno: {
+      /* animalno: {
         title: 'animalNo',
         editable: false,
         addable: false,
-      },
+      }, */
       name: {
         title: 'Name',
       },
