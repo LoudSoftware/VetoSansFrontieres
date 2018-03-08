@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SmartTableService } from '../../@core/data/smart-table.service';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { LocalDataSource } from 'ng2-smart-table';
 
 
 @Component({
-  selector: 'animal-table',
+  selector: 'ngx-animal-table',
   templateUrl: './animal-table.component.html',
   styles: [`
   nb-card {
     transform: translate3d(0, 0, 0);
   }
-`]
+`],
 })
 
 export class AnimalTableComponent implements OnInit {
@@ -54,7 +53,7 @@ export class AnimalTableComponent implements OnInit {
         title: 'State',
       },
       clinic: {
-        title: 'Clinic'
+        title: 'Clinic',
       },
       ownerno: {
         title: 'OwnerNumber',
@@ -62,7 +61,7 @@ export class AnimalTableComponent implements OnInit {
       clinicname: {
         title: 'Clinic Name',
         editable: false,
-      }
+      },
     },
   };
 
@@ -82,6 +81,6 @@ export class AnimalTableComponent implements OnInit {
     }
   }
 
-  ngOnInit(){}
+  ngOnInit() { }
 
 }

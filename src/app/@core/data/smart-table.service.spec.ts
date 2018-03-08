@@ -5,7 +5,7 @@ import { SmartTableService } from './smart-table.service';
 describe('SmartTableService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [SmartTableService]
+      providers: [SmartTableService],
     });
   });
 

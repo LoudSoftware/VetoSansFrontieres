@@ -8,7 +8,7 @@ describe('AnimalTableComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AnimalTableComponent ]
+      declarations: [ AnimalTableComponent ],
     })
     .compileComponents();
   }));
