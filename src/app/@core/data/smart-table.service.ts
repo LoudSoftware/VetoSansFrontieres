@@ -6,17 +6,17 @@ import { Http, Response, Headers } from '@angular/http';
 export class SmartTableService {
 
 
-  apiRoot:string = 'https://itunes.apple.com/search';
-  results:Object[];
-  loading:boolean;
+  apiRoot: string = 'https://itunes.apple.com/search';
+  results: Object[];
+  loading: boolean;
 
-  constructor(private _http: Http) { 
+  constructor(private _http: Http) {
     this.results = [];
     this.loading = false;
   }
 
-  
-  getAnimals(){
+
+  getAnimals() {
     return this._http.get('http://localhost:30000/api/animal').map(res => res.json());
   }
 
