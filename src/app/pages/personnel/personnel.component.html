@@ -1,0 +1,82 @@
+<nb-card>
+<nb-card-header>
+    Personnel
+  </nb-card-header>
+  <nb-card-body>
+<table>
+<th>
+  First Name
+</th>
+<th>
+  Last Name
+</th>
+<th>
+  Birth Date
+</th>
+<th>
+  Sex
+</th>
+<th>
+  Position
+</th>
+<th>
+  Salary
+</th>
+<th>
+  Street
+</th>
+<th>
+  City
+</th>
+<th>
+  State
+</th>
+<th>
+  Postal Code
+</th>
+<th>
+  Clinic Name
+</th>
+<ng-container *ngFor="let item of data">
+	<tr>
+	  <td>
+		{{item.firstname}}
+	  </td>
+	  <td>
+		{{item.lastname}}
+	  </td>
+	  <td>
+		{{item.bdate}}
+	  </td>
+	<td>
+		{{item.sex}}
+	  </td>
+	  <td>
+		{{item.sin}}
+	  </td>
+	  <td>
+		{{item.personnelposition}}
+	  </td>
+	  <td>
+		{{item.salary}}
+	  </td>
+	  <td>
+		{{item.street}}
+	  </td>
+	  <td>
+		{{item.city}}
+	  </td>
+	  <td>
+		{{item.state}}
+	  </td>
+	  <td>
+		{{item.postalcode}}
+	  </td>
+	  <td>
+		{{item.clinicname}}
+	  </td>
+	</tr>
+</ng-container>
+</table>
+</nb-card-body>
+</nb-card>
