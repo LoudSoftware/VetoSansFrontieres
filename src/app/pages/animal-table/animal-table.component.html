@@ -11,7 +11,28 @@
       </li>
     </ul>
   </nb-card-body>
+</nb-card>
 
-   
+<nb-card>
+  <table>
+    <nb-card-header>
+      Animal
+    </nb-card-header>
+    <nb-card-header>
+      Owner
+    </nb-card-header>
+    <ng-container *ngFor="let item of data">
 
+        <tr>
+          <td>
+            {{item.name}}
+          </td>
+          <td>
+            {{item.firstname}}
+          </td>
+
+        </tr>
+
+    </ng-container>
+  </table>
 </nb-card>

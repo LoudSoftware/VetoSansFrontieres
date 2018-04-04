@@ -19,6 +19,9 @@ import { SmartTableService } from '../../@core/data/smart-table.service';
 export class AnimalTableComponent implements OnInit {
   public data;
 
+
+
+
   constructor(private service: SmartTableService) { } // Injecting Table Service
 
   ngOnInit() {
@@ -28,7 +31,7 @@ export class AnimalTableComponent implements OnInit {
 
   getAllAnimals() {
     this.service.getAnimals().subscribe(
-      data => this.data = data["data"],
+      data => this.data = data,
       err => console.error(err),
       () => console.log('done loading Animals...')
     );

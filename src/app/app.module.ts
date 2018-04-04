@@ -20,6 +20,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from '@angular/http';
 
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -32,6 +33,8 @@ import { HttpModule } from '@angular/http';
     NgbModule.forRoot(),
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
+
+ 
   ],
   bootstrap: [AppComponent],
   providers: [
@@ -39,7 +42,7 @@ import { HttpModule } from '@angular/http';
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
-  ]
+  ],
 })
 export class AppModule {
 }
