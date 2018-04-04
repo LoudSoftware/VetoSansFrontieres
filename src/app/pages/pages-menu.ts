@@ -12,25 +12,27 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: 'Auth',
-    icon: 'nb-locked',
-    children: [
-      {
-        title: 'Login',
-        link: '/auth/login',
-      },
-      {
-        title: 'Register',
-        link: '/auth/register',
-      },
-      {
-        title: 'Request Password',
-        link: '/auth/request-password',
-      },
-      {
-        title: 'Reset Password',
-        link: '/auth/reset-password',
-      },
-    ],
+    title: 'Personnel',
+    icon: 'nb-star',
+    link: '/pages/dashboard',
+    home: false,
   },
+  {
+    title: 'Owners',
+    icon: 'nb-person',
+    link: '/pages/dashboard',
+    home: false,
+  },
+  {
+    title: 'Treatments',
+    icon: 'nb-list',
+    link: '/pages/dashboard',
+    home: false,
+  },
+  {
+    title: 'Clinics',
+    icon: 'nb-location',
+    link: '/pages/dashboard',
+    home: false,
+  }
 ];
