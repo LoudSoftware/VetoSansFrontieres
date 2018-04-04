@@ -23,8 +23,18 @@ export class SmartTableService {
       });
   }
 
-  getAnimal(id: number) {
-    return this._http.get(`http://localhost:30000/api/animal/${id}`).map(res => res.json());
+  getAnimal(id: number): Observable<AnimalModel> {
+    return this._http
+    .get(`http://localhost:30000/api/animal/${id}`)
+    .map(res => {
+      return new AnimalModel(res.json()['data']);
+    });
+  }
+
+  updateAnimal(animal: AnimalModel): Observable<AnimalModel> {
+    return this._http
+    .put(`http://localhost:30000/api/animal/${animal.animalno}`, animal)
+    .map(response => null);
   }
 
 }
