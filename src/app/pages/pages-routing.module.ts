@@ -7,7 +7,7 @@ import { EditAnimalComponent } from './edit-animal/edit-animal.component';
 import { PersonnelComponent } from './personnel/personnel.component';
 import { OwnersComponent } from './owners/owners.component';
 import { ClinicsComponent } from './clinics/clinics.component';
-import { TreatmentComponent } from './treatments/treatments.component';
+import { TreatmentsComponent } from './treatments/treatments.component';
 
 const routes: Routes = [{
   path: '',
@@ -40,7 +40,7 @@ const routes: Routes = [{
     },
     {
       path: 'treatments',
-      component: TreatmentComponent,
+      component: TreatmentsComponent,
     }
   ],
 }];

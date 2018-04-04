@@ -1,3 +1,31 @@
-<p>
-  treatments works!
-</p>
+<nb-card>
+<nb-card-header>
+    All Traitements
+  </nb-card-header>
+  <nb-card-body>
+<table>
+<th>
+  Treatment number
+</th>
+<th>
+  description
+</th>
+<th>
+  cost
+</th>
+<ng-container *ngFor="let item of data">
+	<tr>
+	  <td>
+		{{item.tno}}
+	  </td>
+	  <td>
+		{{item.description}}
+	  </td>
+	<td>
+		{{item.cost}}
+	  </td>
+	</tr>
+</ng-container>
+</table>
+</nb-card-body>
+</nb-card>
