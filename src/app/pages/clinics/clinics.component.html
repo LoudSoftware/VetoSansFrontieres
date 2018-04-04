@@ -1,0 +1,73 @@
+<nb-card>
+<nb-card-header>
+    Clinics
+  </nb-card-header>
+  <nb-card-body>
+<table>
+<th>
+  Clinic Number
+</th>
+<th>
+  Clinic Name
+</th>
+<th>
+  Phone Number
+</th>
+<th>
+  Street
+</th>
+<th>
+  City
+</th>
+<th>
+  State
+</th>
+<th>
+  Postal Code
+</th>
+<th>
+  Fax
+</th>
+<th>
+  Manager's First Name
+</th>
+<th>
+  Manager's Last Name
+</th>
+<ng-container *ngFor="let item of data">
+	<tr>
+	  <td>
+		{{item.clinicno}}
+	  </td>
+	  <td>
+		{{item.clinicname}}
+	  </td>
+	  <td>
+		{{item.telephone}}
+	  </td>
+	<td>
+		{{item.street}}
+	  </td>
+	  <td>
+		{{item.city}}
+	  </td>
+	  <td>
+		{{item.state}}
+	  </td>
+	  <td>
+		{{item.postalcode}}
+	  </td>
+	  <td>
+		{{item.fax}}
+	  </td>
+	  <td>
+		{{item.firstname}}
+	  </td>
+	  <td>
+		{{item.lastname}}
+	  </td>
+	</tr>
+</ng-container>
+</table>
+</nb-card-body>
+</nb-card>

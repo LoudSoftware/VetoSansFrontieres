@@ -5,6 +5,10 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 import { EditAnimalComponent } from './edit-animal/edit-animal.component';
+import { PersonnelComponent } from './personnel/personnel.component';
+import { OwnersComponent } from './owners/owners.component';
+import { ClinicsComponent } from './clinics/clinics.component';
+import { TreatmentsComponent } from './treatments/treatments.component';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -19,6 +23,10 @@ const PAGES_COMPONENTS = [
   declarations: [
     ...PAGES_COMPONENTS,
     EditAnimalComponent,
+    PersonnelComponent,
+    OwnersComponent,
+    ClinicsComponent,
+    TreatmentsComponent,
   ],
 })
 export class PagesModule {

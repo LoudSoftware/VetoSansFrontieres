@@ -14,25 +14,25 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Personnel',
     icon: 'nb-star',
-    link: '/pages/dashboard',
+    link: '/pages/personnel',
     home: false,
   },
   {
     title: 'Owners',
     icon: 'nb-person',
-    link: '/pages/dashboard',
+    link: '/pages/owners',
     home: false,
   },
   {
     title: 'Treatments',
     icon: 'nb-list',
-    link: '/pages/dashboard',
+    link: '/pages/treatments',
     home: false,
   },
   {
     title: 'Clinics',
     icon: 'nb-location',
-    link: '/pages/dashboard',
+    link: '/pages/clinics',
     home: false,
   }
 ];
