@@ -28,7 +28,7 @@
 <ng-container *ngFor="let item of data">
 	<tr>
 	  <td>
-		{{item.name}}
+		<a href="http://localhost:4200/#/pages/animal/{{item.animalno}}">{{item.name}}</a>
 	  </td>
 	  <td>
 		{{item.bdate}}
@@ -47,6 +47,9 @@
 	  </td>
 	  <td>
 		{{item.description}}
+	  </td>
+	  <td>
+		<a href="http://localhost:4200/#/pages/treatment/{{item.animalno}}">treatments</a>
 	  </td>
 	</tr>
 </ng-container>
