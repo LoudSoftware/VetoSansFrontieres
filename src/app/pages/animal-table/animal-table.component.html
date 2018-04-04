@@ -1,38 +1,55 @@
 <nb-card>
-  <nb-card-header>
+<nb-card-header>
     Animaux
   </nb-card-header>
-
   <nb-card-body>
-    <ul>
-
-      <li *ngFor="let item of data">
-        {{item.name}} is registered in clinic: {{item.clinicname}}
-      </li>
-    </ul>
-  </nb-card-body>
-</nb-card>
-
-<nb-card>
-  <table>
-    <nb-card-header>
-      Animal
-    </nb-card-header>
-    <nb-card-header>
-      Owner
-    </nb-card-header>
-    <ng-container *ngFor="let item of data">
-
-        <tr>
-          <td>
-            {{item.name}}
-          </td>
-          <td>
-            {{item.firstname}}
-          </td>
-
-        </tr>
-
-    </ng-container>
-  </table>
+<table>
+<th>
+  Animal
+</th>
+<th>
+  Birth Date
+</th>
+<th>
+  Inscription Date
+</th>
+<th>
+  Owner's First Name
+</th>
+<th>
+  Owner's Last Name
+</th>
+<th>
+  Clinic Name
+</th>
+<th>
+  Description
+</th>
+<ng-container *ngFor="let item of data">
+	<tr>
+	  <td>
+		{{item.name}}
+	  </td>
+	  <td>
+		{{item.bdate}}
+	  </td>
+	  <td>
+		{{item.inscriptiondate}}
+	  </td>
+	<td>
+		{{item.firstname}}
+	  </td>
+	  <td>
+		{{item.lastname}}
+	  </td>
+	  <td>
+		{{item.clinicname}}
+	  </td>
+	  <td>
+		{{item.description}}
+	  </td>
+	</tr>
+</ng-container>
+</table>
+</nb-card-body>
 </nb-card>
