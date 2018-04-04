@@ -8,6 +8,8 @@ import { AnimalModel } from './animal-model';
 import { PersonnelModel } from './personnel-model';
 import { OwnerModel } from './owner-model';
 import { ClinicModel } from './clinic-model';
+import {TreatmentModel } from './treatment-model';
+
 
 @Injectable()
 export class SmartTableService {
@@ -28,9 +30,7 @@ export class SmartTableService {
   getAnimal(id: number): Observable<AnimalModel> {
     return this._http
     .get(`http://localhost:30000/api/animal/${id}`)
-    .map(res => {
-      return new AnimalModel(res.json()['data']);
-    });
+    .map(res =>  new AnimalModel(res.json()['data']));
   }
 
   updateAnimal(animal: AnimalModel): Observable<AnimalModel> {
@@ -67,6 +67,13 @@ export class SmartTableService {
         console.log(clinic);
         return clinic.map((clinic) => new ClinicModel(clinic));
       });
+  }
+
+
+  getTreatment(id: number): Observable<TreatmentModel> {
+    return this._http
+    .get(`http://localhost:30000/api/treatment/${id}`)
+    .map(res => new TreatmentModel(res.json()['data']));
   }
 
 }

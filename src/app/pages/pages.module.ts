@@ -9,6 +9,7 @@ import { PersonnelComponent } from './personnel/personnel.component';
 import { OwnersComponent } from './owners/owners.component';
 import { ClinicsComponent } from './clinics/clinics.component';
 import { TreatmentsComponent } from './treatments/treatments.component';
+import { TreatmentViewComponent } from './treatment-view/treatment-view.component';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -27,6 +28,7 @@ const PAGES_COMPONENTS = [
     OwnersComponent,
     ClinicsComponent,
     TreatmentsComponent,
+    TreatmentViewComponent,
   ],
 })
 export class PagesModule {
