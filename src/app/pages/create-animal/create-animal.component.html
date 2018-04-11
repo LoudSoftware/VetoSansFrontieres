@@ -61,7 +61,7 @@
             <div class="form-group row">
               <label for="animaltype">Animal Type</label>
               <select class="form-control" id="animaltype" required [(ngModel)]="animal.animaltype" name="animaltype">
-                <option *ngFor="let type of animalytypes" [value]="type.typeno">{{type.typeno}}: {{type.typename}}</option>
+                <option *ngFor="let animaltype of animaltypes" [value]="animaltype.typeno">{{animaltype.typeno}}: {{animaltype.typename}}</option>
               </select>
             </div>
 

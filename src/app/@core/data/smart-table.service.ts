@@ -31,7 +31,11 @@ export class SmartTableService {
   getAnimalTypes(): Observable<any[]> {
     return this._http
       .get('http://localhost:30000/api/animaltypes')
-      .map(result => result.json()['data']);
+      .map(result => {
+        const animaltype = result.json()['data'];
+        console.log(animaltype);
+        return animaltype;
+      });
   }
 
   getAnimal(id: number): Observable<AnimalModel> {

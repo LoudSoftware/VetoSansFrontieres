@@ -64,7 +64,6 @@ export class CreateAnimalComponent implements OnInit {
     );
   }
 
-
   submitted = false;
 
   onSubmit(animal: AnimalModel) {
