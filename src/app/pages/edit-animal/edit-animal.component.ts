@@ -82,10 +82,10 @@ export class EditAnimalComponent implements OnInit, OnDestroy {
   delete(animal: AnimalModel) {
     if (confirm(`Are you sure you want to delete ${animal.name} ?`)) {
       this.service.removeAnimal(this.animal).subscribe(res => {
-      if (res['status'] == "success") {
-        this.deleted = true;
-      }
-    });
+        if (res) {
+          this.deleted = true;
+        }
+      });
     }
   }
 

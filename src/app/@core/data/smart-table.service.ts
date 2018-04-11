@@ -88,7 +88,7 @@ export class SmartTableService {
       .map(result => {
         const treatments = result.json()['data'];
         console.log(treatments);
-        return treatments.map((treatment) => new TreatmentModel(treatments));
+        return treatments.map((treatments) => new TreatmentModel(treatments));
       });
   }
   

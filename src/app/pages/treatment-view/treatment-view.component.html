@@ -1,23 +1,25 @@
 <div *ngIf="treatments && animal">
   <nb-card>
     <nb-card-header>
-      Treatments for <a href="http://localhost:4200/#/pages/animal/{{id}}">Animal: {{id}} - {{animal.name}}</a>
+      Treatments for
+      <a href="http://localhost:4200/#/pages/animal/{{id}}">{{id}}: {{animal.name}}</a>
     </nb-card-header>
     <nb-card-body>
-      <ng-container *ngFor="let item of treatments">
+
+       <!-- *ngFor="let treatment of treatments"> -->
+        <ul *ngFor="let treatment of treatments">
+          <ul>
+            <li>
+              Description: {{treatment.description}}
+            </li>
+            <li>
+              Cost: {{treatment.cost}}$
+            </li>
+          </ul>
+        </ul>
+      <!-- </ng-container> -->
 
 
-        <div class="col-sm-3">
-          Description:
-        </div>
-        <div class="col-sm-9">
-            {{item.description}}
-        </div>
-
-        <div>
-          Cost: {{item.cost}}
-        </div>
-      </ng-container>
     </nb-card-body>
   </nb-card>
 

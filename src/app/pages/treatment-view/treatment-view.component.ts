@@ -13,7 +13,7 @@ export class TreatmentViewComponent implements OnInit {
 
   id: number;
   sub: any;
-  treatments: TreatmentModel[];
+  public treatments: TreatmentModel[];
   animal: AnimalModel;
 
 
