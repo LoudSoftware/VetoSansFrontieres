@@ -29,7 +29,7 @@ import 'rxjs/add/operator/delay';
                    responsive
                    [right]="sidebar.id === 'right'">
         <nb-sidebar-header>
-          <a href="/pages/createanimal" class="btn btn-hero-success main-btn">
+          <a href="#/pages/createanimal" class="btn btn-hero-success main-btn">
             <i class="ion ion-ios-paw"></i> <span>Create Animal</span>
           </a>
         </nb-sidebar-header>
