@@ -3,8 +3,8 @@ export class AnimalModel {
 
     animalno: number;
     name: string;
-    bdate: string;
-    inscriptiondate: string;
+    bdate: Date;
+    inscriptiondate: Date;
     clinicno: number;
     ownerno: number;
     animaltype: number;
