@@ -33,8 +33,15 @@ export class AnimalTableComponent implements OnInit {
     this.service.getAnimals().subscribe(
       data => this.data = data,
       err => console.error(err),
-      () => console.log('done loading Animals...')
+      () => {
+        console.log('done loading Animals...');
+        this.data.forEach(animal => {
+          animal['inscriptiondate'] = new Date(animal['inscriptiondate']).toDateString();
+          animal['bdate'] = new Date(animal['bdate']).toDateString();
+        });
+      }
     );
+    
   }
 
 }
