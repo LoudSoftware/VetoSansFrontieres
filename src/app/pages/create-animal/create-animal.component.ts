@@ -10,7 +10,7 @@ import { ClinicModel } from '../../@core/data/clinic-model';
   templateUrl: './create-animal.component.html',
   styleUrls: ['./create-animal.component.scss']
 })
-export class CreateAnimalComponent implements OnInit, OnDestroy {
+export class CreateAnimalComponent implements OnInit {
 
   id: number;
   sub: any;
