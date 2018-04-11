@@ -9,11 +9,16 @@ import { OwnersComponent } from './owners/owners.component';
 import { ClinicsComponent } from './clinics/clinics.component';
 import { TreatmentsComponent } from './treatments/treatments.component';
 import { TreatmentViewComponent } from './treatment-view/treatment-view.component';
+import { CreateAnimalComponent } from "./create-animal/create-animal.component";
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
+    {
+      path: 'createanimal',
+      component: CreateAnimalComponent,
+    },
     {
       path: 'dashboard',
       component: DashboardComponent,
