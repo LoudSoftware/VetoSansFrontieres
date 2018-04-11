@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {SmartTableService} from '../../@core/data/smart-table.service';
+import { TreatmentModel } from '../../@core/data/treatment-model';
 
 @Component({
   selector: 'treatment-view',
@@ -11,7 +12,7 @@ export class TreatmentViewComponent implements OnInit {
 
   id:number;
   sub: any;
-  treatment: any; // make public if it doesn't work
+  treatment: TreatmentModel; // make public if it doesn't work
 
 
 
@@ -26,10 +27,15 @@ export class TreatmentViewComponent implements OnInit {
       this.id = +params['id'];
     });
     this.getTreatment(this.id);
+    console.log(this.treatment)
   }
 
   private getTreatment(id: number) {
-    this.service.getTreatment(id)
+    this.service.getTreatment(id).subscribe(
+      data => this.treatment = data,
+      err => console.log(err),
+      () => console.log("done loading treatment...")
+    );
   }
 
   ngOnDestroy(): void {

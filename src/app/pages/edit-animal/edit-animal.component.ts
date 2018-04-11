@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SmartTableService } from '../../@core/data/smart-table.service';
 import { AnimalModel } from '../../@core/data/animal-model';
+import { OwnerModel } from '../../@core/data/owner-model';
+import { ClinicModel } from '../../@core/data/clinic-model';
 
 @Component({
   selector: 'edit-animal',
@@ -13,6 +15,8 @@ export class EditAnimalComponent implements OnInit, OnDestroy {
   id: number;
   sub: any;
   public animal: AnimalModel;
+  public owners: OwnerModel[];
+  public clinics: ClinicModel[];
 
 
   constructor(
@@ -25,9 +29,22 @@ export class EditAnimalComponent implements OnInit, OnDestroy {
       this.id = +params['id'];
     });
     this.getAnimal(this.id); // Grab the animal and save to the animal array
-    console.log(this.animal)
+    console.log(this.animal);
+
+    this.getOwners();
+    console.log(this.owners);
+
+    this.getClinics();
+    console.log(this.clinics);
   }
 
+  private getOwners() {
+    this.service.getOwners().subscribe(
+      data => this.owners = data,
+      err => console.log(err),
+      () => console.log("done loading owners...")
+    );
+  }
 
 
   private getAnimal(id: number) {
@@ -38,13 +55,35 @@ export class EditAnimalComponent implements OnInit, OnDestroy {
     );
   }
 
+  private getClinics() {
+    this.service.getClinics().subscribe(
+      data => this.clinics = data,
+      err => console.log(err),
+      () => console.log("done loading clinics...")
+    );
+  }
+
 
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
 
-  onSubmit(animal: AnimalModel){
-    this.service.updateAnimal(animal).subscribe();
+  submitted = false;
+
+  onSubmit(animal: AnimalModel) {
+    this.service.updateAnimal(this.animal).subscribe(res => {
+      if (res['status'] == "success") {
+        this.submitted = true;
+      }
+    });
+  }
+
+  deleted = false;
+  delete(animal: AnimalModel) {
+    if (confirm(`Are you sure you want to delete ${animal.name} ?`)) {
+      //TODO impplement delete service and call it
+      this.deleted = true;
+    }
   }
 
 }
