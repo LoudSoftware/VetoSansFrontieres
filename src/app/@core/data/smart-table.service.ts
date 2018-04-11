@@ -82,10 +82,14 @@ export class SmartTableService {
   }
 
 
-  getTreatment(id: number): Observable<TreatmentModel> {// TODO change this to return an array and make it work with the stuff that uses it
+  getTreatment(id: number): Observable<TreatmentModel[]> {
     return this._http
       .get(`http://localhost:30000/api/treatment/${id}`)
-      .map(res => new TreatmentModel(res.json()['data']));
+      .map(result => {
+        const treatments = result.json()['data'];
+        console.log(treatments);
+        return treatments.map((treatment) => new TreatmentModel(treatments));
+      });
   }
 
 }

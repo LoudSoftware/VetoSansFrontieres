@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {SmartTableService} from '../../@core/data/smart-table.service';
+import { SmartTableService } from '../../@core/data/smart-table.service';
 import { TreatmentModel } from '../../@core/data/treatment-model';
+import { AnimalModel } from '../../@core/data/animal-model';
 
 @Component({
   selector: 'treatment-view',
@@ -10,10 +11,10 @@ import { TreatmentModel } from '../../@core/data/treatment-model';
 })
 export class TreatmentViewComponent implements OnInit {
 
-  id:number;
+  id: number;
   sub: any;
-  treatment: TreatmentModel; // make public if it doesn't work
-
+  treatments: TreatmentModel[];
+  animal: AnimalModel;
 
 
   constructor(
@@ -27,14 +28,25 @@ export class TreatmentViewComponent implements OnInit {
       this.id = +params['id'];
     });
     this.getTreatment(this.id);
-    console.log(this.treatment)
+    console.log(this.treatments);
+
+    this.getAnimal(this.id);
+    console.log(this.animal)
   }
 
   private getTreatment(id: number) {
     this.service.getTreatment(id).subscribe(
-      data => this.treatment = data,
+      data => this.treatments = data,
       err => console.log(err),
       () => console.log("done loading treatment...")
+    );
+  }
+
+  private getAnimal(id: number) {
+    this.service.getAnimal(id).subscribe(
+      data => this.animal = data,
+      err => console.log(err),
+      () => console.log("done loading animal...")
     );
   }
 
