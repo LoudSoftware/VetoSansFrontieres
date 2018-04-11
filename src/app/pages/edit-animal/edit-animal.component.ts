@@ -81,8 +81,11 @@ export class EditAnimalComponent implements OnInit, OnDestroy {
   deleted = false;
   delete(animal: AnimalModel) {
     if (confirm(`Are you sure you want to delete ${animal.name} ?`)) {
-      //TODO impplement delete service and call it
-      this.deleted = true;
+      this.service.removeAnimal(this.animal).subscribe(res => {
+      if (res['status'] == "success") {
+        this.deleted = true;
+      }
+    });
     }
   }
 

@@ -87,5 +87,11 @@ export class SmartTableService {
       .get(`http://localhost:30000/api/treatment/${id}`)
       .map(res => new TreatmentModel(res.json()['data']));
   }
+  
+  public removeAnimal(animal: AnimalModel): Observable<null> {
+    return this._http
+      .delete(`http://localhost:30000/api/animal/${animal.animalno}`)
+      .map(response => response.json());
+  }
 
 }
