@@ -35,9 +35,10 @@ export class SmartTableService {
   }
 
   updateAnimal(animal: AnimalModel): Observable<AnimalModel> {
+    let res
     return this._http
       .put(`http://localhost:30000/api/animal/${animal.animalno}`, animal)
-      .map(response => null);
+      .map(response => response.json());
   }
 
   getPersonnel(): Observable<PersonnelModel[]> {
@@ -81,7 +82,7 @@ export class SmartTableService {
   }
 
 
-  getTreatment(id: number): Observable<TreatmentModel> {
+  getTreatment(id: number): Observable<TreatmentModel> {// TODO change this to return an array and make it work with the stuff that uses it
     return this._http
       .get(`http://localhost:30000/api/treatment/${id}`)
       .map(res => new TreatmentModel(res.json()['data']));
