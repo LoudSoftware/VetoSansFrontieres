@@ -8,6 +8,7 @@ import { PersonnelComponent } from './personnel/personnel.component';
 import { OwnersComponent } from './owners/owners.component';
 import { ClinicsComponent } from './clinics/clinics.component';
 import { TreatmentsComponent } from './treatments/treatments.component';
+import { TreatmentViewComponent } from './treatment-view/treatment-view.component';
 
 const routes: Routes = [{
   path: '',
@@ -25,6 +26,10 @@ const routes: Routes = [{
     {
       path: 'animal/:id',
       component: EditAnimalComponent,
+    },
+    {
+      path: 'treatment/:id',
+      component: TreatmentViewComponent,
     },
     {
       path: 'personnel',

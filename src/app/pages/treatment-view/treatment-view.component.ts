@@ -29,9 +29,7 @@ export class TreatmentViewComponent implements OnInit {
   }
 
   private getTreatment(id: number) {
-    // this.service.getTreatment()
-    console.log("TODO");
-    this.treatment['name'] = "TODO";
+    this.service.getTreatment(id)
   }
 
   ngOnDestroy(): void {
