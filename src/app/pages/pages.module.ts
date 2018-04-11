@@ -10,6 +10,7 @@ import { OwnersComponent } from './owners/owners.component';
 import { ClinicsComponent } from './clinics/clinics.component';
 import { TreatmentsComponent } from './treatments/treatments.component';
 import { TreatmentViewComponent } from './treatment-view/treatment-view.component';
+import { CreateAnimalComponent } from './create-animal/create-animal.component';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -29,6 +30,7 @@ const PAGES_COMPONENTS = [
     ClinicsComponent,
     TreatmentsComponent,
     TreatmentViewComponent,
+    CreateAnimalComponent,
   ],
 })
 export class PagesModule {

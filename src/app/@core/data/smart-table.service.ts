@@ -97,5 +97,12 @@ export class SmartTableService {
       .delete(`http://localhost:30000/api/animal/${animal.animalno}`)
       .map(response => response.json());
   }
+  
+  createAnimal(animal: AnimalModel) {
+    let res
+    return this._http
+      .post(`http://localhost:30000/api/animal/${animal.animalno}`, animal)
+      .map(response => response.json());
+  }
 
 }
