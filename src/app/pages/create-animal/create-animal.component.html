@@ -1,3 +1,102 @@
-<p>
-  create-animal works!
-</p>
+<div *ngIf="animal && owners && clinics">
+  <div [hidden]="submitted || deleted">
+    <div class="row">
+      <nb-card>
+        <nb-card-header>Creating {{animal.name}}</nb-card-header>
+        <nb-card-body>
+          <form (ngSubmit)="onSubmit()" #createanimalform="ngForm">
+
+            <!-- Name -->
+            <div class="form-group row">
+              <label for="name" class="col-sm-3 col-form-label">Name</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="name" required [(ngModel)]="animal.name" name="name">
+              </div>
+            </div>
+
+
+            <!-- Description -->
+            <div class="form-group row">
+              <label for="description" class="col-sm-3 col-form-label">Description</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="description" required [(ngModel)]="animal.description" name="description">
+              </div>
+            </div>
+
+            <!-- BDate -->
+            <div class="form-group row">
+              <label for="BDate" class="col-sm-3 col-form-label">Birth Date</label>
+              <div class="col-sm-9">
+                <input type="date" class="form-control" id="BDate" required [(ngModel)]="animal.BDate" name="BDate">
+              </div>
+            </div>
+
+            <!-- BDate -->
+            <div class="form-group row">
+              <label for="Inscription" class="col-sm-3 col-form-label">Inscription Date</label>
+              <div class="col-sm-9">
+                <input type="date" class="form-control" id="Inscription" required [(ngModel)]="animal.Inscription" name="Inscription">
+              </div>
+            </div>
+
+
+            <!-- IsAlive -->
+            <div class="form-group row">
+              <label for="isalive" class="col-sm-3 col-form-label">Alive</label>
+              <div class="col-sm-9">
+                <input type="checkbox" class="form-control" id="isalive" required [(ngModel)]="animal.isalive" name="isalive">
+              </div>
+            </div>
+
+
+            <!-- Owner selector -->
+            <div class="form-group row">
+              <label for="owner">Owner</label>
+              <select class="form-control" id="owner" required [(ngModel)]="animal.ownerno" name="owner">
+                <option *ngFor="let owner of owners" [value]="owner.ownerno">{{owner.ownerno}}: {{owner.firstname}} {{owner.lastname}}</option>
+              </select>
+            </div>
+
+            <!-- Animal Type selector -->
+            <div class="form-group row">
+              <label for="animaltype">Animal Type</label>
+              <select class="form-control" id="animaltype" required [(ngModel)]="animal.animaltype" name="animaltype">
+                <option *ngFor="let animaltype of animaltypes" [value]="animaltype.typeno">{{animaltype.typeno}}: {{animaltype.typename}}</option>
+              </select>
+            </div>
+
+
+            <!-- Clinic selector -->
+            <div class="form-group row">
+              <label for="clinic">Clinic</label>
+              <select class="form-control" id="clinic" required [(ngModel)]="animal.clinicno" name="clinic">
+                <option *ngFor="let clinic of clinics" [value]="clinic.clinicno">{{clinic.clinicno}}: {{clinic.clinicname}} in {{clinic.city}}</option>
+              </select>
+            </div>
+
+            <!-- Buttons -->
+            <div class="form-group row">
+              <div class="offset-sm-3 col-sm-9">
+                <button type="submit" class="btn btn-primary" [disabled]="!createanimalform.form.valid">Create</button>
+              </div>
+            </div>
+
+
+          </form>
+        </nb-card-body>
+      </nb-card>
+      <!-- TODO add a preview card -->
+    </div>
+  </div>
+
+  <!-- Shown only if form gets submitted -->
+
+  <div [hidden]="!submitted">
+    <div class="row">
+      <nb-card>
+        <nb-card-header>{{animal.name}}</nb-card-header>
+        <nb-card-body>Successfully edited!</nb-card-body>
+      </nb-card>
+    </div>
+  </div>
+</div>

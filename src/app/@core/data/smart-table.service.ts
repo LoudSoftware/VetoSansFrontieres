@@ -28,6 +28,16 @@ export class SmartTableService {
       });
   }
 
+  getAnimalTypes(): Observable<any[]> {
+    return this._http
+      .get('http://localhost:30000/api/animaltypes')
+      .map(result => {
+        const animaltype = result.json()['data'];
+        console.log(animaltype);
+        return animaltype;
+      });
+  }
+
   getAnimal(id: number): Observable<AnimalModel> {
     return this._http
       .get(`http://localhost:30000/api/animal/${id}`)
@@ -81,7 +91,6 @@ export class SmartTableService {
       });
   }
 
-
   getTreatment(id: number): Observable<TreatmentModel[]> {
     return this._http
       .get(`http://localhost:30000/api/treatment/${id}`)
@@ -99,7 +108,6 @@ export class SmartTableService {
   }
   
   createAnimal(animal: AnimalModel) {
-    let res
     return this._http
       .post(`http://localhost:30000/api/animal/${animal.animalno}`, animal)
       .map(response => response.json());

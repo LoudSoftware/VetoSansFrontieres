@@ -17,6 +17,7 @@ export class CreateAnimalComponent implements OnInit {
   public animal: AnimalModel;
   public owners: OwnerModel[];
   public clinics: ClinicModel[];
+  public animaltypes: any[];
 
   constructor(
     private route: ActivatedRoute,
@@ -32,6 +33,11 @@ export class CreateAnimalComponent implements OnInit {
 
     this.getClinics();
     console.log(this.clinics);
+
+    this.getAnimalTypes();
+    console.log(this.animaltypes);
+
+    this.animal = new AnimalModel();
   }
 
   private getOwners() {
@@ -47,6 +53,14 @@ export class CreateAnimalComponent implements OnInit {
       data => this.clinics = data,
       err => console.log(err),
       () => console.log("done loading clinics...")
+    );
+  }
+
+  private getAnimalTypes() {
+    this.service.getAnimalTypes().subscribe(
+      data => this.animaltypes = data,
+      err => console.log(err),
+      () => console.log("done loading animal types...")
     );
   }
 
