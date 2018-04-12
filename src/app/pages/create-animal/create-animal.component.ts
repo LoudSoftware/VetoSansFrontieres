@@ -84,6 +84,7 @@ export class CreateAnimalComponent implements OnInit {
 
     this.animal.inscriptiondate = inscriptiondate.toISOString();
 
+    this.animal.isalive = true;
 
     this.animal.bdate = new Date(this.animal.bdate).toISOString();
     this.animal.inscriptiondate = new Date(this.animal.inscriptiondate).toISOString();
