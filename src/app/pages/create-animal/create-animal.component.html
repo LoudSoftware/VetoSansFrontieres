@@ -39,16 +39,6 @@
               </div>
             </div>
 
-
-            <!-- IsAlive -->
-            <div class="form-group row">
-              <label for="isalive" class="col-sm-3 col-form-label">Alive</label>
-              <div class="col-sm-9">
-                <input type="checkbox" class="form-control" id="isalive" required [(ngModel)]="animal.isalive" name="isalive">
-              </div>
-            </div>
-
-
             <!-- Owner selector -->
             <div class="form-group row">
               <label for="owner">Owner</label>
@@ -65,7 +55,6 @@
               </select>
             </div>
 
-
             <!-- Clinic selector -->
             <div class="form-group row">
               <label for="clinic">Clinic</label>
@@ -80,7 +69,6 @@
                 <button type="submit" class="btn btn-primary" [disabled]="!createanimalform.form.valid">Create</button>
               </div>
             </div>
-
 
           </form>
         </nb-card-body>
