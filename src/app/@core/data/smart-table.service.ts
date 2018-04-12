@@ -25,7 +25,7 @@ export class SmartTableService {
 
   getAnimals(): Observable<AnimalModel[]> {
     return this._http
-      .get(`${this.apiURL}'/animal`)
+      .get(`${this.apiURL}/animal`)
       .map(result => {
         const animal = result.json()['data'];
         console.log(animal);
