@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SmartTableService } from '../../@core/data/smart-table.service';
+import { AnimalModel } from '../../@core/data/animal-model';
 
 @Component(
   {
@@ -17,7 +18,7 @@ import { SmartTableService } from '../../@core/data/smart-table.service';
 
 
 export class AnimalTableComponent implements OnInit {
-  public data;
+  public data: AnimalModel[];
 
 
 
@@ -41,7 +42,7 @@ export class AnimalTableComponent implements OnInit {
         });
       }
     );
-    
+
   }
 
 }

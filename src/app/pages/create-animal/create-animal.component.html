@@ -25,17 +25,17 @@
 
             <!-- BDate -->
             <div class="form-group row">
-              <label for="BDate" class="col-sm-3 col-form-label">Birth Date</label>
+              <label for="bdate" class="col-sm-3 col-form-label">Birth Date</label>
               <div class="col-sm-9">
-                <input type="date" class="form-control" id="BDate" required [(ngModel)]="animal.BDate" name="BDate">
+                <input type="date" class="form-control" id="bdate" required [(ngModel)]="animal.bdate" name="bdate">
               </div>
             </div>
 
-            <!-- BDate -->
+            <!-- inscriptiondate -->
             <div class="form-group row">
-              <label for="Inscription" class="col-sm-3 col-form-label">Inscription Date</label>
+              <label for="inscriptiondate" class="col-sm-3 col-form-label">Inscription Date</label>
               <div class="col-sm-9">
-                <input type="date" class="form-control" id="Inscription" required [(ngModel)]="animal.Inscription" name="Inscription">
+                <input type="date" class="form-control" id="inscriptiondate" required [(ngModel)]="animal.inscriptiondate" name="inscriptiondate">
               </div>
             </div>
 
@@ -95,7 +95,10 @@
     <div class="row">
       <nb-card>
         <nb-card-header>{{animal.name}}</nb-card-header>
-        <nb-card-body>Successfully edited!</nb-card-body>
+        <nb-card-body>
+          <p>Successfully created!</p>
+          <a href="#/pages/dashboard" class="ion-home">Back to Dashboard</a>
+        </nb-card-body>
       </nb-card>
     </div>
   </div>

@@ -109,7 +109,7 @@ export class SmartTableService {
   
   createAnimal(animal: AnimalModel) {
     return this._http
-      .post(`http://localhost:30000/api/animal/${animal.animalno}`, animal)
+      .post('http://localhost:30000/api/animal/', animal)
       .map(response => response.json());
   }
 

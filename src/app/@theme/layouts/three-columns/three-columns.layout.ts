@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
       <nb-sidebar class="menu-sidebar" tag="menu-sidebar" responsive>
         <nb-sidebar-header>
           <a href="#/pages/createanimal" class="btn btn-hero-success main-btn">
-            <i class="ion ion-ios-paw"></i> <span>Create Animal</span>
+            <i class="ion ion-ios-paw"></i> <span>Create</span>
           </a>
         </nb-sidebar-header>
         <ng-content select="nb-menu"></ng-content>

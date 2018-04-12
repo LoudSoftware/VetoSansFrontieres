@@ -66,7 +66,28 @@ export class CreateAnimalComponent implements OnInit {
 
   submitted = false;
 
-  onSubmit(animal: AnimalModel) {
+  onSubmit() {
+    console.log(this.animal);
+    let bdate = new Date();
+
+    bdate.setFullYear(parseInt(this.animal.bdate.split("-")[0]));
+    bdate.setMonth(parseInt(this.animal.bdate.split("-")[1]));
+    bdate.setDate(parseInt(this.animal.bdate.split("-")[2]));
+
+    this.animal.bdate = bdate.toISOString();
+
+    let inscriptiondate = new Date();
+
+    bdate.setFullYear(parseInt(this.animal.inscriptiondate.split("-")[0]));
+    bdate.setMonth(parseInt(this.animal.inscriptiondate.split("-")[1]));
+    bdate.setDate(parseInt(this.animal.inscriptiondate.split("-")[2]));
+
+    this.animal.inscriptiondate = inscriptiondate.toISOString();
+
+
+    this.animal.bdate = new Date(this.animal.bdate).toISOString();
+    this.animal.inscriptiondate = new Date(this.animal.inscriptiondate).toISOString();
+    console.log(this.animal);
     this.service.createAnimal(this.animal).subscribe(res => {
       if (res['status'] == "success") {
         this.submitted = true;
