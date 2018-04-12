@@ -23,4 +23,36 @@
     </nb-card-body>
   </nb-card>
 
+  <nb-card>
+    <nb-card-header>
+      Examens
+    </nb-card-header>
+    <nb-card-body>
+
+       <!-- *ngFor="let treatment of treatments"> -->
+        <ul *ngFor="let exam of examen">
+          <ul>
+            <li>
+              By:  {{exam.firstname}} {{exam.lastname}}
+            </li>
+            <li>
+              Description: {{exam.description}}
+            </li>
+            <li>
+              Date: {{exam.examdate}}
+            </li>
+            <li>
+              Hour: {{exam.hour}}
+            </li>
+            <li>
+              Cost: {{exam.cost}}$
+            </li>
+          </ul>
+        </ul>
+      <!-- </ng-container> -->
+
+
+    </nb-card-body>
+  </nb-card>
+
 </div>

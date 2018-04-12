@@ -10,6 +10,7 @@ import { OwnerModel } from './owner-model';
 import { ClinicModel } from './clinic-model';
 import { TreatmentModel } from './treatment-model';
 import { TreatmentsModel } from './treatments-model';
+import { ExamenModel } from './examen-model';
 
 
 @Injectable()
@@ -98,6 +99,16 @@ export class SmartTableService {
         const treatments = result.json()['data'];
         console.log(treatments);
         return treatments.map((treatments) => new TreatmentModel(treatments));
+      });
+  }
+
+  getExamen(id: number): Observable<ExamenModel[]> {
+    return this._http
+      .get(`http://localhost:30000/api/examination/${id}`)
+      .map(result => {
+        const examen = result.json()['data'];
+        console.log(examen);
+        return examen.map((examen) => new ExamenModel(examen));
       });
   }
   
