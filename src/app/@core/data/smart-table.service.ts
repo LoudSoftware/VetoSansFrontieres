@@ -17,7 +17,8 @@ import { ExamenModel } from './examen-model';
 export class SmartTableService {
 
 
-  private apiURL = "http://loud.software:3000/api/";
+  // private apiURL = "http://loud.software:3000/api/";
+  private apiURL = "https://vetosansfrontieresbackend.herokuapp.com/api";
 
   constructor(private _http: Http) { }
 
