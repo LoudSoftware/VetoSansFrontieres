@@ -16,12 +16,15 @@ import { ExamenModel } from './examen-model';
 @Injectable()
 export class SmartTableService {
 
+
+  private apiURL = "http://loud.software:3000/api/";
+
   constructor(private _http: Http) { }
 
 
   getAnimals(): Observable<AnimalModel[]> {
     return this._http
-      .get('http://localhost:30000/api/animal')
+      .get(`${this.apiURL}'/animal`)
       .map(result => {
         const animal = result.json()['data'];
         console.log(animal);
@@ -31,7 +34,7 @@ export class SmartTableService {
 
   getAnimalTypes(): Observable<any[]> {
     return this._http
-      .get('http://localhost:30000/api/animaltypes')
+      .get(`${this.apiURL}/animaltypes`)
       .map(result => {
         const animaltype = result.json()['data'];
         console.log(animaltype);
@@ -41,20 +44,20 @@ export class SmartTableService {
 
   getAnimal(id: number): Observable<AnimalModel> {
     return this._http
-      .get(`http://localhost:30000/api/animal/${id}`)
+      .get(`${this.apiURL}/animal/${id}`)
       .map(res => new AnimalModel(res.json()['data']));
   }
 
   updateAnimal(animal: AnimalModel): Observable<AnimalModel> {
     let res
     return this._http
-      .put(`http://localhost:30000/api/animal/${animal.animalno}`, animal)
+      .put(`${this.apiURL}/animal/${animal.animalno}`, animal)
       .map(response => response.json());
   }
 
   getPersonnel(): Observable<PersonnelModel[]> {
     return this._http
-      .get('http://localhost:30000/api/allpersonnel')
+      .get(`${this.apiURL}/allpersonnel`)
       .map(result => {
         const personnel = result.json()['data'];
         console.log(personnel);
@@ -64,7 +67,7 @@ export class SmartTableService {
 
   getOwners(): Observable<OwnerModel[]> {
     return this._http
-      .get('http://localhost:30000/api/owner')
+      .get(`${this.apiURL}/owner`)
       .map(result => {
         const owner = result.json()['data'];
         console.log(owner);
@@ -74,7 +77,7 @@ export class SmartTableService {
 
   getClinics(): Observable<ClinicModel[]> {
     return this._http
-      .get('http://localhost:30000/api/clinics')
+      .get(`${this.apiURL}/clinics`)
       .map(result => {
         const clinic = result.json()['data'];
         console.log(clinic);
@@ -84,7 +87,7 @@ export class SmartTableService {
 
   getAllTreatments(): Observable<TreatmentsModel[]> {
     return this._http
-      .get('http://localhost:30000/api/treatments')
+      .get(`${this.apiURL}/treatments`)
       .map(result => {
         const treatments = result.json()['data'];
         console.log(treatments);
@@ -94,7 +97,7 @@ export class SmartTableService {
 
   getTreatment(id: number): Observable<TreatmentModel[]> {
     return this._http
-      .get(`http://localhost:30000/api/treatment/${id}`)
+      .get(`${this.apiURL}/treatment/${id}`)
       .map(result => {
         const treatments = result.json()['data'];
         console.log(treatments);
@@ -104,7 +107,7 @@ export class SmartTableService {
 
   getExamen(id: number): Observable<ExamenModel[]> {
     return this._http
-      .get(`http://localhost:30000/api/examination/${id}`)
+      .get(`${this.apiURL}/examination/${id}`)
       .map(result => {
         const examen = result.json()['data'];
         console.log(examen);
@@ -114,13 +117,13 @@ export class SmartTableService {
   
   public removeAnimal(animal: AnimalModel): Observable<null> {
     return this._http
-      .delete(`http://localhost:30000/api/animal/${animal.animalno}`)
+      .delete(`${this.apiURL}/animal/${animal.animalno}`)
       .map(response => response.json());
   }
   
   createAnimal(animal: AnimalModel) {
     return this._http
-      .post('http://localhost:30000/api/animal/', animal)
+      .post(`${this.apiURL}/animal/`, animal)
       .map(response => response.json());
   }
 
