@@ -9,7 +9,7 @@ import { OwnersComponent } from './owners/owners.component';
 import { ClinicsComponent } from './clinics/clinics.component';
 import { TreatmentsComponent } from './treatments/treatments.component';
 import { TreatmentViewComponent } from './treatment-view/treatment-view.component';
-import { CreateAnimalComponent } from "./create-animal/create-animal.component";
+import { CreateAnimalComponent } from './create-animal/create-animal.component';
 
 const routes: Routes = [{
   path: '',
@@ -51,7 +51,7 @@ const routes: Routes = [{
     {
       path: 'treatments',
       component: TreatmentsComponent,
-    }
+    },
   ],
 }];
 

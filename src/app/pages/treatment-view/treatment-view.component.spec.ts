@@ -8,7 +8,7 @@ describe('TreatmentViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TreatmentViewComponent ]
+      declarations: [ TreatmentViewComponent ],
     })
     .compileComponents();
   }));

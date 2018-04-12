@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SmartTableService } from '../../@core/data/smart-table.service';
 import { TreatmentModel } from '../../@core/data/treatment-model';
@@ -8,7 +8,7 @@ import { ExamenModel } from '../../@core/data/examen-model';
 @Component({
   selector: 'treatment-view',
   templateUrl: './treatment-view.component.html',
-  styleUrls: ['./treatment-view.component.scss']
+  styleUrls: ['./treatment-view.component.scss'],
 })
 export class TreatmentViewComponent implements OnInit {
 
@@ -42,7 +42,7 @@ export class TreatmentViewComponent implements OnInit {
     this.service.getTreatment(id).subscribe(
       data => this.treatments = data,
       err => console.log(err),
-      () => console.log("done loading treatment...")
+      () => console.log('done loading treatment...'),
     );
   }
 
@@ -50,7 +50,7 @@ export class TreatmentViewComponent implements OnInit {
     this.service.getExamen(id).subscribe(
       data => this.examen = data,
       err => console.log(err),
-      () => console.log("done loading examens...")
+      () => console.log('done loading examens...'),
     );
   }
 
@@ -58,7 +58,7 @@ export class TreatmentViewComponent implements OnInit {
     this.service.getAnimal(id).subscribe(
       data => this.animal = data,
       err => console.log(err),
-      () => console.log("done loading animal...")
+      () => console.log('done loading animal...'),
     );
   }
 

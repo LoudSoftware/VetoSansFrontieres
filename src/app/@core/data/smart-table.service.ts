@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 
@@ -18,7 +18,7 @@ export class SmartTableService {
 
 
   // private apiURL = "http://loud.software:3000/api/";
-  private apiURL = "https://vetosansfrontieresbackend.herokuapp.com/api";
+  private apiURL = 'https://vetosansfrontieresbackend.herokuapp.com/api';
 
   constructor(private _http: Http) { }
 
@@ -115,13 +115,13 @@ export class SmartTableService {
         return examen.map((examen) => new ExamenModel(examen));
       });
   }
-  
+
   public removeAnimal(animal: AnimalModel): Observable<null> {
     return this._http
       .delete(`${this.apiURL}/animal/${animal.animalno}`)
       .map(response => response.json());
   }
-  
+
   createAnimal(animal: AnimalModel) {
     return this._http
       .post(`${this.apiURL}/animal/`, animal)

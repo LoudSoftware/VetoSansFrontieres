@@ -8,7 +8,7 @@ import { ClinicModel } from '../../@core/data/clinic-model';
 @Component({
   selector: 'edit-animal',
   templateUrl: './edit-animal.component.html',
-  styleUrls: ['./edit-animal.component.scss']
+  styleUrls: ['./edit-animal.component.scss'],
 })
 export class EditAnimalComponent implements OnInit, OnDestroy {
 
@@ -42,7 +42,7 @@ export class EditAnimalComponent implements OnInit, OnDestroy {
     this.service.getOwners().subscribe(
       data => this.owners = data,
       err => console.log(err),
-      () => console.log("done loading owners...")
+      () => console.log('done loading owners...'),
     );
   }
 
@@ -51,7 +51,7 @@ export class EditAnimalComponent implements OnInit, OnDestroy {
     this.service.getAnimal(id).subscribe(
       data => this.animal = data,
       err => console.error(err),
-      () => console.log('done loading Animal...')
+      () => console.log('done loading Animal...'),
     );
   }
 
@@ -59,7 +59,7 @@ export class EditAnimalComponent implements OnInit, OnDestroy {
     this.service.getClinics().subscribe(
       data => this.clinics = data,
       err => console.log(err),
-      () => console.log("done loading clinics...")
+      () => console.log('done loading clinics...'),
     );
   }
 
@@ -72,7 +72,7 @@ export class EditAnimalComponent implements OnInit, OnDestroy {
 
   onSubmit(animal: AnimalModel) {
     this.service.updateAnimal(this.animal).subscribe(res => {
-      if (res['status'] == "success") {
+      if (res['status'] == 'success') {
         this.submitted = true;
       }
     });

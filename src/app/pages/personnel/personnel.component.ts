@@ -10,7 +10,7 @@ import { ClinicModel } from '../../@core/data/clinic-model';
   styles: [`
       nb-card {
         transform: translate3d(0, 0, 0);
-      }`
+      }`,
     ],
 })
 
@@ -36,7 +36,7 @@ public clinics: ClinicModel[];
         this.data.forEach(personnel => {
           personnel['bdate'] = new Date(personnel['bdate']).toDateString();
         });
-      }
+      },
     );
   }
 
@@ -44,7 +44,7 @@ public clinics: ClinicModel[];
     this.service.getClinics().subscribe(
       data => this.clinics = data,
       err => console.log(err),
-      () => console.log("done loading clinics...")
+      () => console.log('done loading clinics...'),
     );
   }
 

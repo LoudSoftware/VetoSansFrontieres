@@ -8,7 +8,7 @@ import { ClinicModel } from '../../@core/data/clinic-model';
 @Component({
   selector: 'create-animal',
   templateUrl: './create-animal.component.html',
-  styleUrls: ['./create-animal.component.scss']
+  styleUrls: ['./create-animal.component.scss'],
 })
 export class CreateAnimalComponent implements OnInit {
 
@@ -44,7 +44,7 @@ export class CreateAnimalComponent implements OnInit {
     this.service.getOwners().subscribe(
       data => this.owners = data,
       err => console.log(err),
-      () => console.log("done loading owners...")
+      () => console.log('done loading owners...'),
     );
   }
 
@@ -52,7 +52,7 @@ export class CreateAnimalComponent implements OnInit {
     this.service.getClinics().subscribe(
       data => this.clinics = data,
       err => console.log(err),
-      () => console.log("done loading clinics...")
+      () => console.log('done loading clinics...'),
     );
   }
 
@@ -60,7 +60,7 @@ export class CreateAnimalComponent implements OnInit {
     this.service.getAnimalTypes().subscribe(
       data => this.animaltypes = data,
       err => console.log(err),
-      () => console.log("done loading animal types...")
+      () => console.log('done loading animal types...'),
     );
   }
 
@@ -68,19 +68,19 @@ export class CreateAnimalComponent implements OnInit {
 
   onSubmit() {
     console.log(this.animal);
-    let bdate = new Date();
+    const bdate = new Date();
 
-    bdate.setFullYear(parseInt(this.animal.bdate.split("-")[0]));
-    bdate.setMonth(parseInt(this.animal.bdate.split("-")[1]));
-    bdate.setDate(parseInt(this.animal.bdate.split("-")[2]));
+    bdate.setFullYear(parseInt(this.animal.bdate.split('-')[0]));
+    bdate.setMonth(parseInt(this.animal.bdate.split('-')[1]));
+    bdate.setDate(parseInt(this.animal.bdate.split('-')[2]));
 
     this.animal.bdate = bdate.toISOString();
 
-    let inscriptiondate = new Date();
+    const inscriptiondate = new Date();
 
-    bdate.setFullYear(parseInt(this.animal.inscriptiondate.split("-")[0]));
-    bdate.setMonth(parseInt(this.animal.inscriptiondate.split("-")[1]));
-    bdate.setDate(parseInt(this.animal.inscriptiondate.split("-")[2]));
+    bdate.setFullYear(parseInt(this.animal.inscriptiondate.split('-')[0]));
+    bdate.setMonth(parseInt(this.animal.inscriptiondate.split('-')[1]));
+    bdate.setDate(parseInt(this.animal.inscriptiondate.split('-')[2]));
 
     this.animal.inscriptiondate = inscriptiondate.toISOString();
 
@@ -90,7 +90,7 @@ export class CreateAnimalComponent implements OnInit {
     this.animal.inscriptiondate = new Date(this.animal.inscriptiondate).toISOString();
     console.log(this.animal);
     this.service.createAnimal(this.animal).subscribe(res => {
-      if (res['status'] == "success") {
+      if (res['status'] == 'success') {
         this.submitted = true;
       }
     });

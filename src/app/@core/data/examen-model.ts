@@ -1,5 +1,5 @@
 export class ExamenModel {
-    
+
     name: string;
     examdate: string;
     hour: number;

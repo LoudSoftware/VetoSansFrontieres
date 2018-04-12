@@ -8,7 +8,7 @@ import { SmartTableService } from '../../@core/data/smart-table.service';
   styles: [`
       nb-card {
         transform: translate3d(0, 0, 0);
-      }`
+      }`,
     ],
 })
 export class TreatmentsComponent implements OnInit {
@@ -26,7 +26,7 @@ public data;
     this.service.getAllTreatments().subscribe(
       data => this.data = data,
       err => console.error(err),
-      () => console.log('done loading Treatments...')
+      () => console.log('done loading Treatments...'),
     );
   }
 

@@ -1,5 +1,5 @@
 export class OwnerModel {
-	
+
 	ownerno: number;
     firstname: string;
     lastname: string;
@@ -23,5 +23,5 @@ export class OwnerModel {
     constructor(values: Object = {}) {
         Object.assign(this, values);
     }
-	
+
 }

@@ -34,7 +34,7 @@ import { HttpModule } from '@angular/http';
     ThemeModule.forRoot(),
     CoreModule.forRoot(),
 
- 
+
   ],
   bootstrap: [AppComponent],
   providers: [

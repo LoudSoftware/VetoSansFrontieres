@@ -1,5 +1,5 @@
 export class TreatmentsModel {
-	
+
 	tno: number;
     description: string;
     cost: number;
@@ -11,5 +11,5 @@ export class TreatmentsModel {
     constructor(values: Object = {}) {
         Object.assign(this, values);
     }
-	
+
 }

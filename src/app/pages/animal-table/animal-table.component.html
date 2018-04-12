@@ -30,7 +30,7 @@
       <ng-container *ngFor="let item of data" ng-init="clinic.clinicname">
         <tr *ngIf = "(item.clinicname == clinic.clinicname)">
           <td>
-            <a href="/VetoSansFrontieres/#/pages/animal/{{item.animalno}}">{{item.name}}</a>
+            <a href="/#/pages/animal/{{item.animalno}}">{{item.name}}</a>
           </td>
           <td></td>
           <td>
@@ -54,7 +54,7 @@
           </td>
           <td></td>
           <td>
-            <a href="/VetoSansFrontieres/#/pages/treatment/{{item.animalno}}">treatments</a>
+            <a href="/#/pages/treatment/{{item.animalno}}">treatments</a>
           </td>
         </tr>
       </ng-container>

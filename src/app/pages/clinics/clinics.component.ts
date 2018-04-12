@@ -9,7 +9,7 @@ import { SmartTableService } from '../../@core/data/smart-table.service';
   styles: [`
       nb-card {
         transform: translate3d(0, 0, 0);
-      }`
+      }`,
     ],
 })
 
@@ -29,7 +29,7 @@ export class ClinicsComponent implements OnInit {
     this.service.getClinics().subscribe(
       data => this.data = data,
       err => console.error(err),
-      () => console.log('done loading Personnel...')
+      () => console.log('done loading Personnel...'),
     );
   }
 

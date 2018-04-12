@@ -34,5 +34,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'nb-location',
     link: '/pages/clinics',
     home: false,
-  }
+  },
 ];

@@ -1,5 +1,5 @@
 export class ClinicModel {
-	
+
     clinicno: number;
     telephone: number;
     street: string;

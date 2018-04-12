@@ -13,9 +13,9 @@ import { ClinicModel } from '../../@core/data/clinic-model';
     styles: [`
       nb-card {
         transform: translate3d(0, 0, 0);
-      }`
+      }`,
     ],
-  }
+  },
 )
 
 
@@ -43,7 +43,7 @@ export class AnimalTableComponent implements OnInit {
           animal['inscriptiondate'] = new Date(animal['inscriptiondate']).toDateString();
           animal['bdate'] = new Date(animal['bdate']).toDateString();
         });
-      }
+      },
     );
 
   }
@@ -52,7 +52,7 @@ export class AnimalTableComponent implements OnInit {
     this.service.getClinics().subscribe(
       data => this.clinics = data,
       err => console.log(err),
-      () => console.log("done loading clinics...")
+      () => console.log('done loading clinics...'),
     );
   }
 

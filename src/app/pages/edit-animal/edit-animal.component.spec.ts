@@ -8,7 +8,7 @@ describe('EditAnimalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditAnimalComponent ]
+      declarations: [ EditAnimalComponent ],
     })
     .compileComponents();
   }));

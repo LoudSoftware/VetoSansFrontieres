@@ -7,7 +7,7 @@ import { SmartTableService } from '../../@core/data/smart-table.service';
   styles: [`
       nb-card {
         transform: translate3d(0, 0, 0);
-      }`
+      }`,
     ],
 })
 export class OwnersComponent implements OnInit {
@@ -24,7 +24,7 @@ public data;
     this.service.getOwners().subscribe(
       data => this.data = data,
       err => console.error(err),
-      () => console.log('done loading Owners...')
+      () => console.log('done loading Owners...'),
     );
   }
 
