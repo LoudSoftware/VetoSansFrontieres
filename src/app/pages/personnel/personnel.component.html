@@ -1,6 +1,6 @@
-<nb-card>
+<nb-card *ngFor="let clinic of clinics">
 <nb-card-header>
-    Personnel
+    Personnel in {{clinic.clinicname}}
   </nb-card-header>
   <nb-card-body>
 <table>
@@ -34,11 +34,8 @@
 <th>
   Postal Code
 </th>
-<th>
-  Clinic Name
-</th>
 <ng-container *ngFor="let item of data">
-	<tr>
+	<tr *ngIf = "(item.clinicname == clinic.clinicname)">
 	  <td>
 		{{item.firstname}}
 	  </td>
@@ -48,7 +45,7 @@
 	  <td>
 		{{item.bdate}}
 	  </td>
-	<td>
+	  <td>
 		{{item.sex}}
 	  </td>
 	  <td>
@@ -71,9 +68,6 @@
 	  </td>
 	  <td>
 		{{item.postalcode}}
-	  </td>
-	  <td>
-		{{item.clinicname}}
 	  </td>
 	</tr>
 </ng-container>
