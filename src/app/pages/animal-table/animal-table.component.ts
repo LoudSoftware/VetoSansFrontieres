@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SmartTableService } from '../../@core/data/smart-table.service';
+
 import { AnimalModel } from '../../@core/data/animal-model';
+import { ClinicModel } from '../../@core/data/clinic-model';
+
 
 @Component(
   {
@@ -20,13 +23,13 @@ import { AnimalModel } from '../../@core/data/animal-model';
 export class AnimalTableComponent implements OnInit {
   public data: AnimalModel[];
 
-
-
+  public clinics: ClinicModel[];
 
   constructor(private service: SmartTableService) { } // Injecting Table Service
 
   ngOnInit() {
     this.getAllAnimals(); // Grab all the animals and save them to the data array
+    this.getAllClinics();
 
   }
 
@@ -43,6 +46,14 @@ export class AnimalTableComponent implements OnInit {
       }
     );
 
+  }
+
+  private getAllClinics() {
+    this.service.getClinics().subscribe(
+      data => this.clinics = data,
+      err => console.log(err),
+      () => console.log("done loading clinics...")
+    );
   }
 
 }

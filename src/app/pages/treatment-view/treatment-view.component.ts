@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { SmartTableService } from '../../@core/data/smart-table.service';
 import { TreatmentModel } from '../../@core/data/treatment-model';
 import { AnimalModel } from '../../@core/data/animal-model';
+import { ExamenModel } from '../../@core/data/examen-model';
 
 @Component({
   selector: 'treatment-view',
@@ -15,7 +16,7 @@ export class TreatmentViewComponent implements OnInit {
   sub: any;
   public treatments: TreatmentModel[];
   animal: AnimalModel;
-
+  examen: ExamenModel[];
 
   constructor(
     private route: ActivatedRoute,
@@ -31,7 +32,10 @@ export class TreatmentViewComponent implements OnInit {
     console.log(this.treatments);
 
     this.getAnimal(this.id);
-    console.log(this.animal)
+    console.log(this.animal);
+
+    this.getExam(this.id);
+    console.log(this.animal);
   }
 
   private getTreatment(id: number) {
@@ -39,6 +43,14 @@ export class TreatmentViewComponent implements OnInit {
       data => this.treatments = data,
       err => console.log(err),
       () => console.log("done loading treatment...")
+    );
+  }
+
+  private getExam(id: number) {
+    this.service.getExamen(id).subscribe(
+      data => this.examen = data,
+      err => console.log(err),
+      () => console.log("done loading examens...")
     );
   }
 

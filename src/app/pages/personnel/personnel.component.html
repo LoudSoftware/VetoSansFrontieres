@@ -1,79 +1,88 @@
-<nb-card>
+<nb-card *ngFor="let clinic of clinics">
 <nb-card-header>
-    Personnel
+    Personnel in {{clinic.clinicname}}
   </nb-card-header>
   <nb-card-body>
 <table>
 <th>
   First Name
 </th>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <th>
   Last Name
 </th>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <th>
   Birth Date
 </th>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <th>
   Sex
 </th>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <th>
   Position
 </th>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <th>
   Salary
 </th>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <th>
   Street
 </th>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <th>
   City
 </th>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <th>
   State
 </th>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <th>
   Postal Code
 </th>
-<th>
-  Clinic Name
-</th>
 <ng-container *ngFor="let item of data">
-	<tr>
+	<tr *ngIf = "(item.clinicname == clinic.clinicname)">
 	  <td>
 		{{item.firstname}}
-	  </td>
+		</td>
+		<td></td>
 	  <td>
 		{{item.lastname}}
-	  </td>
+		</td>
+		<td></td>
 	  <td>
 		{{item.bdate}}
-	  </td>
-	<td>
-		{{item.sex}}
-	  </td>
+		</td>
+		<td></td>
 	  <td>
-		{{item.sin}}
-	  </td>
+		{{item.sex}}
+		</td>
+		<td></td>
 	  <td>
 		{{item.personnelposition}}
-	  </td>
+		</td>
+		<td></td>
 	  <td>
 		{{item.salary}}
-	  </td>
+		</td>
+		<td></td>
 	  <td>
 		{{item.street}}
-	  </td>
+		</td>
+		<td></td>
 	  <td>
 		{{item.city}}
-	  </td>
+		</td>
+		<td></td>
 	  <td>
 		{{item.state}}
-	  </td>
+		</td>
+		<td></td>
 	  <td>
 		{{item.postalcode}}
-	  </td>
-	  <td>
-		{{item.clinicname}}
 	  </td>
 	</tr>
 </ng-container>
