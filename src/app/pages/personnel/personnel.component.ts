@@ -31,7 +31,12 @@ public clinics: ClinicModel[];
     this.service.getPersonnel().subscribe(
       data => this.data = data,
       err => console.error(err),
-      () => console.log('done loading Personnel...')
+      () => {
+        console.log('done loading Personnel...');
+        this.data.forEach(personnel => {
+          personnel['bdate'] = new Date(personnel['bdate']).toDateString();
+        });
+      }
     );
   }
 
