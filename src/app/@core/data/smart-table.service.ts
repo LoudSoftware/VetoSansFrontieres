@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { Response, Headers , Http} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 
@@ -50,7 +50,6 @@ export class SmartTableService {
   }
 
   updateAnimal(animal: AnimalModel): Observable<AnimalModel> {
-    let res
     return this._http
       .put(`${this.apiURL}/animal/${animal.animalno}`, animal)
       .map(response => response.json());
@@ -115,13 +114,13 @@ export class SmartTableService {
         return examen.map((examen) => new ExamenModel(examen));
       });
   }
-  
+
   public removeAnimal(animal: AnimalModel): Observable<null> {
     return this._http
       .delete(`${this.apiURL}/animal/${animal.animalno}`)
       .map(response => response.json());
   }
-  
+
   createAnimal(animal: AnimalModel) {
     return this._http
       .post(`${this.apiURL}/animal/`, animal)
