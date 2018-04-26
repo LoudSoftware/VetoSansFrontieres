@@ -131,4 +131,16 @@ export class SmartTableService {
       .map(response => response.json());
   }
 
+  findAnimal(name: string) {
+    this.result = this._http
+      .get(`${this.apiURL}/animal/byname/${name}`)
+      .subscribe(res => {
+        this.result = res.json()['data'];
+        console.log(this.result);
+
+        return this.router.navigate(["pages/animal",this.result['animalno']]);
+      }, err => {
+        return this.router.navigate(["pages/dashboard"]);
+      });
+  }
 }
