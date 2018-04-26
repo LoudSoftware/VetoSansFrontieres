@@ -1,16 +1,17 @@
-import { Injectable } from '@angular/core';
-import { Response, Headers , Http} from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import {Injectable} from '@angular/core';
+import {Response, Headers, Http} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 
 
 //Importing required models
-import { AnimalModel } from './animal-model';
-import { PersonnelModel } from './personnel-model';
-import { OwnerModel } from './owner-model';
-import { ClinicModel } from './clinic-model';
-import { TreatmentModel } from './treatment-model';
-import { TreatmentsModel } from './treatments-model';
-import { ExamenModel } from './examen-model';
+import {AnimalModel} from './animal-model';
+import {PersonnelModel} from './personnel-model';
+import {OwnerModel} from './owner-model';
+import {ClinicModel} from './clinic-model';
+import {TreatmentModel} from './treatment-model';
+import {TreatmentsModel} from './treatments-model';
+import {ExamenModel} from './examen-model';
+import {Router} from "@angular/router";
 
 
 @Injectable()
@@ -18,9 +19,12 @@ export class SmartTableService {
 
 
   // private apiURL = "http://loud.software:3000/api/";
-  private apiURL = "https://vetosansfrontieresbackend.herokuapp.com/api";
+  private apiURL = "http://localhost:3000/api";
+  private result: any;
 
-  constructor(private _http: Http) { }
+  constructor(private _http: Http,
+              private router: Router) {
+  }
 
 
   getAnimals(): Observable<AnimalModel[]> {
